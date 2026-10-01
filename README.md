@@ -26,15 +26,15 @@ QCM therefore follows five rules:
 
 ```mermaid
 flowchart TD
-    Camera[USB camera] --> V4L2[/dev/video4]
-    V4L2 --> Stock[webcamd + mjpg-streamer]
-    V4L2 --> CN[Crowsnest + uStreamer]
-    QCM[QCM] --> Stock
+    Camera["USB camera"] --> V4L2["/dev/video4"]
+    V4L2 --> Stock["webcamd + mjpg-streamer"]
+    V4L2 --> CN["Crowsnest + uStreamer"]
+    QCM["QCM"] --> Stock
     QCM --> CN
-    CN --> HTTP[127.0.0.1:8080]
+    CN --> HTTP["127.0.0.1:8080"]
     Stock --> HTTP
-    HTTP --> Nginx[QIDI nginx /webcam/]
-    Nginx --> UI[Fluidd / QIDI WebUI]
+    HTTP --> Nginx["QIDI nginx /webcam/"]
+    Nginx --> UI["Fluidd / QIDI WebUI"]
 ```
 
 QCM is the control plane. The selected backend is the data-plane implementation.
