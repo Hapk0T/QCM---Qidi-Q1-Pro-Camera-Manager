@@ -1,0 +1,19 @@
+[Unit]
+Description=Crowsnest camera service for QIDI Q1 Pro
+After=network.target
+
+[Service]
+Type=simple
+User=mks
+Group=mks
+WorkingDirectory=/opt/qidi-camera/crowsnest
+ExecStart=/opt/qidi-camera/crowsnest/crowsnest -c /opt/qidi-camera/config/crowsnest.conf
+Restart=no
+KillMode=control-group
+TimeoutStopSec=15
+PrivateTmp=true
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

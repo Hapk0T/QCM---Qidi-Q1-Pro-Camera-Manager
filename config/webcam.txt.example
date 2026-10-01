@@ -1,0 +1,15 @@
+# QCM - QIDI Camera Manager
+# Copy the active configuration below into:
+# /home/mks/klipper_config/webcam.txt
+
+QCM_BACKEND="crowsnest"
+QCM_DEVICE="/dev/video4"
+QCM_RESOLUTION="1280x720"
+QCM_FPS="30"
+QCM_HOST="127.0.0.1"
+QCM_PORT="8080"
+QCM_V4L2_CONTROLS="brightness=0,contrast=1,saturation=80,gamma=84,gain=1,sharpness=2,backlight_compensation=0"
+QCM_BACKEND_OPTIONS="crowsnest.log_path=/tmp/crowsnest.log;crowsnest.log_level=quiet;crowsnest.delete_log=true;crowsnest.no_proxy=false;cam1.mode=mjpg"
+
+# Legacy compatibility for QIDI webcamd:
+camera_usb_options="-r 1280x720 -f 30 -d /dev/video4"

@@ -1,0 +1,17 @@
+[Unit]
+Description=QIDI Camera Manager
+After=network-online.target
+Wants=network-online.target
+Before=webcamd.service crowsnest-qidi.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/qidi-camera/qcm
+ExecStart=/usr/bin/python3 /opt/qidi-camera/qcm/qcm.py
+Restart=always
+RestartSec=2
+NoNewPrivileges=false
+
+[Install]
+WantedBy=multi-user.target
